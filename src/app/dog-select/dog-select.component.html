@@ -1,0 +1,19 @@
+<section class="dog-select-section">
+  <div class="dog-select-wrapper">
+    <div class="h1-wrapper">
+      <h1>Wybierz odmianę rasy {{slugName}}</h1>
+    </div>
+    <div class="select-wrapper">
+      <div *ngFor="let dog of dogPhoto; let i = index" [routerLink]="['/dogs', dog.split('/')[4]]">
+        <div class="select-image-wrapper">
+          <div class="select-image">
+            <img [alt]="subName![i]" [src]="dog">
+          </div>
+          <div class="sub">
+            <div>{{subName![i]}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

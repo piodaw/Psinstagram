@@ -1,0 +1,76 @@
+<main class="main">
+  <div class="items">
+    <div *ngIf="selectedDog; else elsePic" class="items-dogs-wrap">
+      <div *ngFor="let dog of dogPhoto" class="items-wrapper">
+        <div class="items-header">
+          <div class="items-avatar">
+            <img [alt]="breed" [src]="dog">
+          </div>
+          <a class="items-nickname" [routerLink]="['/dogs', dog.split('/')[4]]">
+            {{ dog.split('/')[4] }}
+          </a>
+        </div>
+        <div class="image-wrapper">
+          <img [alt]="breed" [src]="dog">
+        </div>
+        <div class="items-info">
+          <div class="icons">
+            <div>
+              <fa-icon [ngClass]="iconClass" [icon]="faHeart" (click)="likeClick()"></fa-icon>
+            </div>
+            <div>
+              <fa-icon [icon]="faComment"></fa-icon>
+            </div>
+          </div>
+          <div class="items-desc">
+            <div class="items-like">Liczba polubień: {{ likes }}</div>
+            <div class="items-comments">
+              <div>
+                <strong>{{ dog.split('/')[4] }}</strong> Chcesz się więcej o mnie dowiedzieć? Kliknij
+                <a
+                  [href]="'https://en.wikipedia.org/wiki/' + dog.split('/')[4].split('-').join('_')"
+                >tutaj</a>. Jeśli chcesz zobaczyć więcej moich zdjęć wejdź na mój profil!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #elsePic>
+      <div class="items-wrapper">
+        <div class="items-header">
+          <div class="items-avatar">
+            <img [alt]="breed" [src]="randomImage">
+          </div>
+          <a class="items-nickname" [routerLink]="['/dogs', breed]">
+            {{ breed }}
+          </a>
+        </div>
+        <div class="image-wrapper">
+          <img [alt]="breed" [src]="randomImage">
+        </div>
+        <div class="items-info">
+          <div class="icons">
+            <div>
+              <fa-icon [ngClass]="iconClass" [icon]="faHeart" (click)="likeClick()"></fa-icon>
+            </div>
+            <div>
+              <fa-icon [icon]="faComment"></fa-icon>
+            </div>
+          </div>
+          <div class="items-desc">
+            <div class="items-like">Liczba polubień: {{ likes }}</div>
+            <div class="items-comments">
+              <div>
+                <strong>{{ breed }}</strong> Chcesz się więcej o mnie dowiedzieć? Kliknij
+                <a
+                  [href]="'https://en.wikipedia.org/wiki/' + breed?.split('-')?.join('_')"
+                >tutaj</a>. Jeśli chcesz zobaczyć więcej moich zdjęć wejdź na mój profil!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</main>

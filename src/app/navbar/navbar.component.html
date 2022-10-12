@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <div class="navbar-wrapper">
+    <div class="navbar-items-wrapper">
+      <div class="navbar-logo">
+        <div [routerLink]="['/']">{{ title }}</div>
+      </div>
+      <div class="navbar-search">
+        <select #select (change)="newData(select.value)">
+          <option disabled selected value>Kliknij aby wybrać rasę</option>
+          <option *ngFor="let dog of dogList | keyvalue" [value]="[dog.key, dog.value]">{{ dog.key }}</option>
+        </select>
+      </div>
+      <div class="navbar-icons">
+        <div>
+          <a>
+            <fa-icon [icon]="faHouse"></fa-icon>
+          </a>
+        </div>
+        <div>
+          <a>
+            <fa-icon [icon]="faCompass"></fa-icon>
+          </a>
+        </div>
+        <div>
+          <a>
+            <fa-icon [icon]="faHeart"></fa-icon>
+          </a>
+        </div>
+          <div class="navbar-avatar-wrapper">
+            <img class="navbar-avatar-img" alt="GD" src="assets/images/golden.jpeg">
+          </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,52 @@
+<section class="profile-section">
+  <div class="profile-wrapper">
+    <div class="profile-info">
+      <div class="image-wrapper">
+        <div class="image">
+          <img [alt]="slugName" [src]="dogPhoto">
+        </div>
+      </div>
+      <div class="profile-desc-wrapper">
+        <div class="desc-header">
+          <div class="profile-name">
+            <h1>{{slugName}}</h1>
+          </div>
+          <ul class="random-stats">
+            <li>Liczba postów: <strong>{{ posts }}</strong></li>
+            <li><strong>{{ followers }}</strong> Obserwujący</li>
+            <li>Obserwowani: <strong>{{follows}}</strong></li>
+          </ul>
+        </div>
+        <div class="desc-wrapper">
+          <div class="desc-breed">
+            <span>{{ slugName }}</span>
+          </div>
+          <div class="desc-type">
+            <div>Pies</div>
+          </div>
+          <div>
+            Chcesz się więcej o mnie dowiedzieć? Kliknij
+            <a
+              [href]="'https://en.wikipedia.org/wiki/' + wiki"
+            >tutaj</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-posts">
+      <div class="posts-header">
+        <fa-icon [icon]="faTableCellsLarge"></fa-icon>
+        <h2>Posty</h2>
+      </div>
+      <div class="posts-wrapper">
+        <div class="post" *ngFor="let post of allPhotos">
+          <div class="post-image-wrapper">
+            <div class="post-image">
+              <img [src]="post" [alt]="breed">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

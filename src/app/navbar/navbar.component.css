@@ -1,0 +1,86 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  order: 0;
+  height: 59px;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  z-index:10;
+}
+
+.navbar-wrapper {
+  max-width: 935px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.navbar-items-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  flex: 1 0 127px;
+  font-size: 24px;
+  font-family: cursive;
+}
+
+.navbar-logo > div {
+  cursor: pointer;
+}
+
+.navbar-search {
+  align-items: center;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  height: 36px;
+  min-width: 125px;
+  position: relative;
+  width: 265px;
+  border-radius: 8px;
+}
+
+.navbar-search > select {
+  background-color: #efefef;
+  border: 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #919191;
+  font-size: 16px;
+  height: 100%;
+  outline: none;
+  padding: 3px 16px;
+  width: 100%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+}
+
+fa-icon {
+  font-size: 24px;
+  margin-left: 24px;
+}
+
+.navbar-avatar-wrapper {
+  display: flex;
+  margin-left: 24px;
+}
+
+.navbar-avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #B6B6B6;
+}
