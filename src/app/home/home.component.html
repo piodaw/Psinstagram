@@ -7,7 +7,7 @@
             <img [alt]="breed" [src]="dog">
           </div>
           <a class="items-nickname" [routerLink]="['/dogs', dog.split('/')[4]]">
-            {{ dog.split('/')[4] }}
+            {{ dog.split('/')[4].split('-').join(' ') }}
           </a>
         </div>
         <div class="image-wrapper">
@@ -26,7 +26,7 @@
             <div class="items-like">Liczba polubień: {{ likes }}</div>
             <div class="items-comments">
               <div>
-                <strong>{{ dog.split('/')[4] }}</strong> Chcesz się więcej o mnie dowiedzieć? Kliknij
+                <strong>{{ dog.split('/')[4]!.split('-').join(' ') }}</strong> Chcesz się więcej o mnie dowiedzieć? Kliknij
                 <a
                   [href]="'https://en.wikipedia.org/wiki/' + dog.split('/')[4].split('-').join('_')"
                 >tutaj</a>. Jeśli chcesz zobaczyć więcej moich zdjęć wejdź na mój profil!

@@ -37,7 +37,6 @@ export class DogProfileComponent implements OnInit {
       this.slugName = this.slug?.split('-').join(' ')
       this.wiki = this.slug?.split('-').join('_')
       this.slugLink = [this.slug!.split('-').join('/')]
-      console.log(this.slugLink)
       if (!this.dogPhoto?.length) {
         this.dogName = this.slugLink
         this.getDogPhoto(this.dogName!)

@@ -29,11 +29,11 @@ export class DogSelectComponent implements OnInit {
     })
 
     this.slugName = this.slugLink![0]
-    let array: string[] = []
-    for (let i = 1; i < this.slugLink!.length; i++) {
-      array.push(this.slugLink![i])
-    }
-    this.subName = array
+    // let array: string[] = []
+    // for (let i = 1; i < this.slugLink!.length; i++) {
+    //   array.push(this.slugLink![i])
+    // }
+    // this.subName = array
   }
 
   getDogPhoto(dog: string[]) {
@@ -44,6 +44,8 @@ export class DogSelectComponent implements OnInit {
       })
     }
     this.dogPhoto = array
+    this.subName = this.dogPhoto
+    console.log(this.subName)
   }
 
 }

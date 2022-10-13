@@ -84,3 +84,38 @@ fa-icon {
   border-radius: 50%;
   border: 2px solid #B6B6B6;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    height: 85px;
+    position: static;
+  }
+  .navbar-items-wrapper {
+    flex-direction: column;
+  }
+  .navbar-logo {
+    flex: 0;
+  }
+  .navbar-icons {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 576px) {
+  .navbar-icons {
+    margin: 0;
+  }
+  .navbar-icons > div {
+    display: none;
+  }
+  .navbar-icons > div:last-child {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .navbar-icons {
+    margin: 0;
+  }
+}
