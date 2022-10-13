@@ -112,3 +112,9 @@ fa-icon:hover {
 .items-comments {
   display: flex;
 }
+
+@media only screen and (max-width: 480px) {
+  .main {
+    margin: 0;
+  }
+}
