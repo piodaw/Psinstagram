@@ -60,6 +60,7 @@
   width: 100%;
   z-index: 2;
   cursor: pointer;
+  -webkit-appearance:none;
 }
 
 .navbar-icons {
@@ -71,6 +72,12 @@
 fa-icon {
   font-size: 24px;
   margin-left: 24px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+fa-icon:hover {
+  color: #FF8484;
 }
 
 .navbar-avatar-wrapper {
@@ -83,6 +90,12 @@ fa-icon {
   height: 32px;
   border-radius: 50%;
   border: 2px solid #B6B6B6;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.navbar-avatar-img:hover {
+  transform: scale(1.05);
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {

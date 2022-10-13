@@ -7,7 +7,7 @@
             <img [alt]="breed" [src]="dog">
           </div>
           <a class="items-nickname" [routerLink]="['/dogs', dog.split('/')[4]]">
-            {{ dog.split('/')[4].split('-').join(' ') }}
+            {{ dog.split('/')[4].split('-')[0] }}
           </a>
         </div>
         <div class="image-wrapper">
@@ -16,7 +16,7 @@
         <div class="items-info">
           <div class="icons">
             <div>
-              <fa-icon [ngClass]="iconClass" [icon]="faHeart" (click)="likeClick()"></fa-icon>
+              <fa-icon [icon]="faHeart"></fa-icon>
             </div>
             <div>
               <fa-icon [icon]="faComment"></fa-icon>
@@ -26,7 +26,9 @@
             <div class="items-like">Liczba polubień: {{ likes }}</div>
             <div class="items-comments">
               <div>
-                <strong>{{ dog.split('/')[4]!.split('-').join(' ') }}</strong> Chcesz się więcej o mnie dowiedzieć? Kliknij
+                <strong>
+                  {{ dog.split('/')[4]!.split('-').join(' ') }}
+                </strong> Chcesz się więcej o mnie dowiedzieć z wikipedii? Kliknij
                 <a
                   [href]="'https://en.wikipedia.org/wiki/' + dog.split('/')[4].split('-').join('_')"
                 >tutaj</a>. Jeśli chcesz zobaczyć więcej moich zdjęć wejdź na mój profil!
@@ -52,7 +54,7 @@
         <div class="items-info">
           <div class="icons">
             <div>
-              <fa-icon [ngClass]="iconClass" [icon]="faHeart" (click)="likeClick()"></fa-icon>
+              <fa-icon [icon]="faHeart"></fa-icon>
             </div>
             <div>
               <fa-icon [icon]="faComment"></fa-icon>
@@ -62,7 +64,7 @@
             <div class="items-like">Liczba polubień: {{ likes }}</div>
             <div class="items-comments">
               <div>
-                <strong>{{ breed }}</strong> Chcesz się więcej o mnie dowiedzieć? Kliknij
+                <strong>{{ breed }}</strong> Chcesz się więcej o mnie dowiedzieć z wikipedii? Kliknij
                 <a
                   [href]="'https://en.wikipedia.org/wiki/' + breed?.split('-')?.join('_')"
                 >tutaj</a>. Jeśli chcesz zobaczyć więcej moich zdjęć wejdź na mój profil!

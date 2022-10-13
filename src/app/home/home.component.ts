@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { RandomDogPhotoService, DogPhotoService, SelectedDogService } from 'src/app/services/dog.service'
-import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
-import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'
+import { faComment } from '@fortawesome/free-regular-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-home',
@@ -16,9 +16,6 @@ export class HomeComponent implements OnInit {
   likes?: number;
   faHeart = faHeart;
   faComment = faComment;
-  likeClick: any;
-  clicked: boolean = false;
-  iconClass = '';
   selectedDog?: string[];
 
   constructor(
@@ -34,15 +31,6 @@ export class HomeComponent implements OnInit {
     });
 
     this.likes = Math.floor(Math.random() * 1000);
-
-    this.likeClick = () => {
-      if (!this.clicked) {
-        this.clicked = true;
-        this.likes = this.likes! + 1;
-        this.iconClass = 'clicked'
-        this.faHeart = solidHeart
-      }
-    }
 
     this.selectedDogService.data$.subscribe((data: any) => {
       if (data !== 'select') {

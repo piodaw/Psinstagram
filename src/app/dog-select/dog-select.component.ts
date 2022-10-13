@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faComment } from '@fortawesome/free-regular-svg-icons'
 
-import { DogPhotoService } from 'src/app/services/dog.service'
+import { DogPhotoService, SelectedDogService } from 'src/app/services/dog.service'
 
 @Component({
   selector: 'app-dog-select',
@@ -15,10 +17,15 @@ export class DogSelectComponent implements OnInit {
   dogPhoto?: string[]
   slugName?: string;
   subName?: string[];
+  dogLink?: string[];
+  faHeart = faHeart;
+  faComment = faComment;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private dogPhotoService: DogPhotoService
+    private dogPhotoService: DogPhotoService,
+    private selectedDogService: SelectedDogService,
+    private redirect: Router
   ) { }
 
   ngOnInit() {
@@ -29,11 +36,19 @@ export class DogSelectComponent implements OnInit {
     })
 
     this.slugName = this.slugLink![0]
-    // let array: string[] = []
-    // for (let i = 1; i < this.slugLink!.length; i++) {
-    //   array.push(this.slugLink![i])
-    // }
-    // this.subName = array
+
+    this.selectedDogService.data$.subscribe((data: any) => {
+      if (data !== 'select') {
+        this.dogLink = data.split(',').filter((item: string) => item !== '');
+        if (this.dogLink!.length > 2) {
+          this.redirect.navigate(['dogs/select', this.dogLink!.join('-')]).then(() => {
+            window.location.reload();
+          })
+        } else {
+          this.redirect.navigate(['dogs', this.dogLink!.join('-')])
+        }
+      }
+    })
   }
 
   getDogPhoto(dog: string[]) {

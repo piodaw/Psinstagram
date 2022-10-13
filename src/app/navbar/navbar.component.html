@@ -6,14 +6,14 @@
       </div>
       <div class="navbar-search">
         <select #select (change)="newData(select.value)">
-          <option disabled selected value>Kliknij aby wybrać rasę</option>
+          <option disabled selected>Kliknij aby wybrać rasę</option>
           <option *ngFor="let dog of dogList | keyvalue" [value]="[dog.key, dog.value]">{{ dog.key }}</option>
         </select>
       </div>
       <div class="navbar-icons">
         <div>
           <a>
-            <fa-icon [icon]="faHouse"></fa-icon>
+            <fa-icon [icon]="faHouse" [routerLink]="['/']"></fa-icon>
           </a>
         </div>
         <div>

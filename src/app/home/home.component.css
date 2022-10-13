@@ -13,7 +13,7 @@
 
 .items-wrapper {
   background-color: #fff;
-  width: 500px;
+  max-width: 500px;
   border-radius: 8px;
   border: 1px solid #dbdbdb;
 }
@@ -81,6 +81,7 @@ fa-icon {
   margin-right: 16px;
   cursor: pointer;
   transition: all .3s;
+  color: #FF8484;
 }
 
 fa-icon:hover {
@@ -113,8 +114,31 @@ fa-icon:hover {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+  color: #8EC5FC;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 480px) {
   .main {
     margin: 0;
+  }
+
+  .items-wrapper {
+    border: none;
+  }
+
+  .items-header {
+    border: 1px solid #dbdbdb;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .items-info {
+    border: 1px solid #dbdbdb;
+    border-radius: 0 0 8px 8px;
   }
 }

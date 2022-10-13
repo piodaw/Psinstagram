@@ -5,12 +5,45 @@
     </div>
     <div class="select-wrapper">
       <div *ngFor="let dog of dogPhoto; let i = index" [routerLink]="['/dogs', dog.split('/')[4]]">
-        <div class="select-image-wrapper">
-          <div class="select-image">
-            <img [alt]="subName![i]" [src]="dog">
-          </div>
+        <div class="border">
           <div class="sub">
-            <div>{{subName![i].split('/')[4].split('-').join(' ')}}</div>
+            <div class="avatar-wrapper">
+              <img [src]="dog" [alt]="subName![i]">
+            </div>
+            <div>
+              <div>{{subName![i].split('/')[4].split('-').join(' ')}}</div>
+            </div>
+          </div>
+          <div class="select-image-wrapper">
+            <div class="select-image">
+              <img [alt]="subName![i]" [src]="dog">
+            </div>
+          </div>
+          <div class="items-info">
+            <div class="icons">
+              <div>
+                <fa-icon [icon]="faHeart"></fa-icon>
+              </div>
+              <div>
+                <fa-icon [icon]="faComment"></fa-icon>
+              </div>
+            </div>
+            <div class="items-desc">
+              <div class="items-comments">
+                <div>
+                  <strong>
+                    {{ subName![i].split('/')[4].split('-').join(' ') }}
+                  </strong> Sprawdź mnie
+                  <a
+                    [href]="'https://en.wikipedia.org/wiki/' + subName![i]
+                    .split('/')[4]
+                    .split('-')
+                    .join('_')">
+                    tutaj
+                  </a>lub wejdź na mój profil!
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
