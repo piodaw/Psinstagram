@@ -6,17 +6,17 @@ import { RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { DogProfileComponent } from './dog-profile/dog-profile.component';
 import { HomeComponent } from './home/home.component';
 import { DogSelectComponent } from './dog-select/dog-select.component';
+import { NavbarComponent } from 'src/app/navbar/navbar.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     DogProfileComponent,
     HomeComponent,
+    NavbarComponent,
     DogSelectComponent
   ],
   imports: [
@@ -33,4 +33,5 @@ import { DogSelectComponent } from './dog-select/dog-select.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

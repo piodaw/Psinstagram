@@ -6,8 +6,14 @@
 .items {
   margin: 16px 0;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -21,7 +27,11 @@
 .items-header {
   height: 39px;
   border-bottom: 1px solid #dee2e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 10px;
 }
@@ -46,14 +56,25 @@
 }
 
 .items-dogs-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
 }
 
 .image-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background: #000;
   max-width: 500px;
@@ -69,17 +90,27 @@
 }
 
 .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 8px;
 }
 
 fa-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 24px;
   margin-right: 16px;
   cursor: pointer;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   color: #FF8484;
 }
@@ -90,16 +121,25 @@ fa-icon:hover {
 
 .clicked {
   color: #FF0000;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
 }
 
 .test-clicked:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
   color: red;
 }
 
 .items-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 8px 0 16px;
   gap: 8px;
@@ -111,6 +151,8 @@ fa-icon:hover {
 }
 
 .items-comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
