@@ -35,7 +35,9 @@ export class DogSelectComponent implements OnInit {
       this.getDogPhoto(this.slugLink!)
     })
 
-    this.slugName = this.slugLink![0]
+    if (this.slugLink) {
+      this.slugName = this.slugLink![0]
+    }
 
     this.selectedDogService.data$.subscribe((data: any) => {
       if (data !== 'select') {
@@ -46,6 +48,7 @@ export class DogSelectComponent implements OnInit {
           })
         } else {
           this.redirect.navigate(['dogs', this.dogLink!.join('-')])
+            .catch((err) => console.log(err))
         }
       }
     })

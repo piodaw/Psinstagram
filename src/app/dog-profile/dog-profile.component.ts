@@ -53,6 +53,7 @@ export class DogProfileComponent implements OnInit {
         } else if (window.location.href.includes('dogs')) {
           this.getDogPhoto(this.dogName!);
           this.redirect.navigate(['dogs', this.dogName!.join('-')])
+            .catch((err) => console.log(err))
         }
       }
     })

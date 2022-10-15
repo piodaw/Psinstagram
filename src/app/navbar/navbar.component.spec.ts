@@ -25,5 +25,10 @@ describe('NavbarComponent', () => {
 
   it('should have a title', () => {
     expect(component.title).toEqual('Psintagram');
-  })
+  });
+
+  it('should have a search input', () => {
+    const search = fixture.nativeElement.querySelector('select');
+    expect(search).toBeTruthy();
+  });
 });

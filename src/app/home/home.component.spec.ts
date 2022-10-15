@@ -22,4 +22,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a image', () => {
+    const image = fixture.nativeElement.querySelector('img');
+    expect(image).toBeTruthy();
+  });
 });
