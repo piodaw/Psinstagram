@@ -1,6 +1,6 @@
 # Psintagram
 
-Aplikacja, w której możesz wybrać rasę psa i zobaczyć jak wygląda
+Aplikacja pobierające listę psów z api udostępnianego przez https://dog.ceo dzięki, której możesz wybrać rasę psa i zobaczyć jak wygląda
 oraz przejść na wikipedię przeczytać o niej więcej. 
 
 ### Profile jak na instagramie
