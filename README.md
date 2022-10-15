@@ -13,13 +13,13 @@ więcej zdjęć danego psa.
 Pobierz projekt
 
 ```bash
-  git clone https://github.com/piodaw/piodaw.github.io.git
+  git clone https://github.com/piodaw/psintagram.git
 ```
 
 Przejdź do folderu projektu
 
 ```bash
-  cd piodaw.github.io
+  cd psintagram
 ```
 
 Zainstaluj
@@ -33,6 +33,10 @@ Włącz serwer
 ```bash
   ng serve
 ```
+
+## Demo
+
+https://psinstagram.vercel.app/
 
 ## Technologie
 
